@@ -65,6 +65,7 @@ static void my_application_activate(GApplication* application) {
 // Implements GApplication::local_command_line.
 static gboolean my_application_local_command_line(GApplication* application, gchar*** arguments, int* exit_status) {
   MyApplication* self = MY_APPLICATION(application);
+  (void)arguments; // Suppress unused parameter warning
   // Strip out the first argument as it is the binary name.
   self->dart_entrypoint_arguments = g_strdupv(*arguments + 1);
 
@@ -83,7 +84,7 @@ static gboolean my_application_local_command_line(GApplication* application, gch
 
 // Implements GApplication::startup.
 static void my_application_startup(GApplication* application) {
-  //MyApplication* self = MY_APPLICATION(object);
+  (void)application; // Suppress unused parameter warning
 
   // Perform any actions required at application startup.
 
@@ -92,7 +93,7 @@ static void my_application_startup(GApplication* application) {
 
 // Implements GApplication::shutdown.
 static void my_application_shutdown(GApplication* application) {
-  //MyApplication* self = MY_APPLICATION(object);
+  (void)application; // Suppress unused parameter warning
 
   // Perform any actions required at application shutdown.
 
@@ -107,6 +108,7 @@ static void my_application_dispose(GObject* object) {
 }
 
 static void my_application_class_init(MyApplicationClass* klass) {
+  (void)klass; // Suppress unused parameter warning
   G_APPLICATION_CLASS(klass)->activate = my_application_activate;
   G_APPLICATION_CLASS(klass)->local_command_line = my_application_local_command_line;
   G_APPLICATION_CLASS(klass)->startup = my_application_startup;
@@ -114,7 +116,9 @@ static void my_application_class_init(MyApplicationClass* klass) {
   G_OBJECT_CLASS(klass)->dispose = my_application_dispose;
 }
 
-static void my_application_init(MyApplication* self) {}
+static void my_application_init(MyApplication* self) {
+  (void)self; // Suppress unused parameter warning
+}
 
 MyApplication* my_application_new() {
   // Set the program name to the application ID, which helps various systems

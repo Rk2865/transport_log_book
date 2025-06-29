@@ -125,7 +125,7 @@ transport_log_book/
 
 1. **Clone the repository:**
    ```bash
-   git clone https://github.com/your-username/transport_log_book.git
+   git clone https://github.com/Rk2865/transport_log_book.git
    cd transport_log_book
    ```
 
@@ -183,7 +183,7 @@ We welcome contributions to improve the Transport Log Book application!
 
 ## 📄 License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the MIT License.
 
 ---
 
